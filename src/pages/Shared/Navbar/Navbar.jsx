@@ -1,11 +1,11 @@
 
 import { Link } from "react-router-dom";
-
+import siteLogo from '../../../assets/logo/musicSchool.jpg'
 
 
 const Navbar = () => {
-    // const user=true;
-    const user=false;
+    const user = true;
+    // const user = false;
 
     const navOptions = <>
         <li><Link to="/">Home</Link></li>
@@ -25,7 +25,11 @@ const Navbar = () => {
                             {navOptions}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">Music School</a>
+                    <a className="avatar ">
+                        <div className="w-12 rounded-xl">
+                            <img src={siteLogo} />
+                        </div>
+                    </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -36,7 +40,7 @@ const Navbar = () => {
                     {
                         user ? <><div className="avatar">
                             <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                <img  src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
+                                <img src="https://thumbs.dreamstime.com/b/male-avatar-icon-flat-style-male-user-icon-cartoon-man-avatar-hipster-vector-stock-91462914.jpg" />
                             </div>
                         </div></> : <Link to='/login' className="btn">login</Link>
                     }
