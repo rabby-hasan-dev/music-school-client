@@ -4,8 +4,8 @@ import siteLogo from '../../../assets/logo/musicSchool.jpg'
 
 
 const Navbar = () => {
-    const user = true;
-    // const user = false;
+    // const user = true;
+    const user = false;
 
     const navOptions = <>
         <li><Link to="/">Home</Link></li>
