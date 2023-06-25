@@ -3,10 +3,23 @@ import siteLogo from '../../../assets/logo/musicSchool.jpg'
 import loginLogo from '../../../assets/login/login.jpg'
 import { useForm } from "react-hook-form";
 import { FaGoogle } from 'react-icons/fa';
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 const Login = () => {
+    const { loginUser,googleSignIn}=useContext(AuthContext);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
+
+        loginUser(data.email, data.password)
+        .then(result=>{
+            const loggedUser=result.user;
+
+            console.log(loggedUser)
+        })
+        .catch(error=>{
+            console.log(error);
+        })
 
     }
 
@@ -53,7 +66,7 @@ const Login = () => {
                             </form>
                             <div className="form-control mt-6">
 
-                                <button className="btn "> <FaGoogle></FaGoogle> Google</button>
+                                <button onClick={googleSignIn} className="btn "> <FaGoogle></FaGoogle> Google</button>
                             </div>
                             <p> <small> New Here? <Link className='link' to='/signUp'>Create an Account</Link> </small></p>
                         </div>
