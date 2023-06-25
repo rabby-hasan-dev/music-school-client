@@ -4,7 +4,7 @@ import loginLogo from '../../../assets/login/login.jpg'
 import { useForm } from "react-hook-form";
 import { FaGoogle } from 'react-icons/fa';
 const Login = () => {
-    const { register, handleSubmit, reset,  } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
 
@@ -38,7 +38,8 @@ const Login = () => {
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="password" {...register("password", { required: true, })} name="password" placeholder="password" className="input input-bordered" />
+                                    <input type="password" {...register("password", { required: true, minLength: 6, })} name="password" placeholder="password" className="input input-bordered" />
+                                    {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                                     <label className="label">
                                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                     </label>
