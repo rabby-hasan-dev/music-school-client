@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import siteLogo from '../../../assets/logo/musicSchool.jpg'
 import loginLogo from '../../../assets/login/login.jpg'
 import { useForm } from "react-hook-form";
-import { FaBeer, FaGoogle } from 'react-icons/fa';
+import { FaGoogle } from 'react-icons/fa';
 const Login = () => {
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset,  } = useForm();
     const onSubmit = data => {
         console.log(data)
-        console.log(data.email)
+
     }
 
 
@@ -38,7 +38,7 @@ const Login = () => {
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="password" {...register("password", { required: true })} name="password" placeholder="password" className="input input-bordered" />
+                                    <input type="password" {...register("password", { required: true, })} name="password" placeholder="password" className="input input-bordered" />
                                     <label className="label">
                                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                     </label>
@@ -52,7 +52,7 @@ const Login = () => {
                             </form>
                             <div className="form-control mt-6">
 
-                               <button className="btn "> <FaGoogle></FaGoogle> Google</button>
+                                <button className="btn "> <FaGoogle></FaGoogle> Google</button>
                             </div>
                             <p> <small> New Here? <Link className='link' to='/signUp'>Create an Account</Link> </small></p>
                         </div>
