@@ -3,10 +3,9 @@ import siteLogo from '../../../assets/logo/musicSchool.jpg'
 import loginLogo from '../../../assets/login/login.jpg'
 import { useForm } from "react-hook-form";
 import { FaGoogle } from 'react-icons/fa';
-import { useContext } from "react";
-import { AuthContext } from "../../../Providers/AuthProvider";
+import useAuth from "../../../Hooks/UseAuth";
 const Login = () => {
-    const { loginUser, googleSignIn } = useContext(AuthContext);
+    const { loginUser, googleSignIn } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";

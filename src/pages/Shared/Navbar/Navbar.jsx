@@ -1,15 +1,14 @@
 
 import { Link } from "react-router-dom";
 import siteLogo from '../../../assets/logo/musicSchool.jpg'
-import { useContext } from "react";
-import { AuthContext } from "../../../Providers/AuthProvider";
+import useAuth from "../../../Hooks/UseAuth";
 
 
 const Navbar = () => {
- 
-    const { user, logOut}=useContext(AuthContext);
 
-    
+    const { user, logOut } = useAuth();
+
+
 
 
     const navOptions = <>
@@ -18,7 +17,7 @@ const Navbar = () => {
         <li> <Link to='/classes'>Classes</Link></li>
         <li> <Link to="/dashboard" >Dashboard</Link></li>
         {
-            user?<li><button onClick={logOut}>Log Out</button></li>: <> </>
+            user ? <li><button onClick={logOut}>Log Out</button></li> : <> </>
         }
 
     </>
@@ -47,7 +46,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user? <><div className="avatar">
+                        user ? <><div className="avatar">
                             <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                 <img src={user?.photoURL} />
                             </div>

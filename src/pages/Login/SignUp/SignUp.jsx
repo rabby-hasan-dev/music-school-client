@@ -2,11 +2,10 @@ import siteLogo from '../../../assets/logo/musicSchool.jpg'
 import signUpLogo from '../../../assets/login/signUp.jpg'
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { useContext } from 'react';
-import { AuthContext } from '../../../Providers/AuthProvider';
+import useAuth from '../../../Hooks/UseAuth';
 
 const SignUp = () => {
-    const { createUser, updateUserProfiles, } = useContext(AuthContext)
+    const { createUser, updateUserProfiles, } = useAuth();
 
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
