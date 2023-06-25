@@ -5,11 +5,14 @@ import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 import Login from "../pages/Login/Login/Login";
 import SignUp from "../pages/Login/SignUp/SignUp";
 
+import Instructors from "../pages/Instructors/Instructors";
+import Classes from "../pages/Classes/Classes";
+
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
-        errorElement:<ErrorPage></ErrorPage>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -21,7 +24,15 @@ const router = createBrowserRouter([
             },
             {
                 path: 'signUp',
-                element:<SignUp></SignUp>
+                element: <SignUp></SignUp>
+            },
+            {
+                path: 'classes',
+                element: <Classes></Classes>
+            },
+            {
+                path: 'instructors',
+                element: <Instructors></Instructors>
             },
         ]
     },
