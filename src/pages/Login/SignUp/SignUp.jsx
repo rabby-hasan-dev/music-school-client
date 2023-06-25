@@ -23,6 +23,7 @@ const SignUp = () => {
                 console.log(loggedUser);
                 updateUserProfiles(data.name, data.photoURL)
                     .then(() => {
+                        reset()
                     })
                     .catch(error => console.log(error))
             })
