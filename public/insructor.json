@@ -10,6 +10,7 @@
     {
         "user": "instructors",
         "instrument": "drum",
+        "total_class":17,
         "name": "Jane Doe",
         "email": "jane@example.com",
         "picture": "https://thumbs.dreamstime.com/b/teacher-portrait-middle-age-holding-files-standing-classroom-school-45191474.jpg"
@@ -17,6 +18,7 @@
     {
         "user": "instructors",
         "instrument": "guitar",
+        "total_class":15,
         "name": "Alex Johnson",
         "email": "alex@example.com",
         "picture": "https://www.shutterstock.com/image-photo/young-male-music-teacher-sitting-260nw-2310731623.jpg"
@@ -24,6 +26,7 @@
     {
         "user": "instructors",
         "instrument": "wind",
+        "total_class":21,
         "name": "Sarah Thompson",
         "email": "sarah@example.com",
         "picture": "https://img.freepik.com/free-photo/front-view-young-beautiful-lady-white-t-shirt-black-jeans-coat-holding-green-book-pen-smiling-white_140725-18658.jpg?w=2000"
