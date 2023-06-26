@@ -6,7 +6,9 @@ import Login from "../pages/Login/Login/Login";
 import SignUp from "../pages/Login/SignUp/SignUp";
 
 import Instructors from "../pages/Instructors/Instructors";
-import Classes from "../pages/Classes/Classes";
+import Classes from "../pages/Classes/Clasess/Classes";
+
+
 
 const router = createBrowserRouter([
     {

@@ -1,0 +1,35 @@
+[
+    {
+       
+        "name": "Piano Class",
+        "image": "https://images.pexels.com/photos/1246437/pexels-photo-1246437.jpeg?cs=srgb&dl=pexels-juan-pablo-serrano-arenas-1246437.jpg&fm=jpg",
+        "instructor": {
+            "name": "John Smith",
+            "email": "john@example.com"
+        },
+        "available_seats": 10,
+        "price": 100.00
+    },
+    {
+       
+        "name": "Guitar Class",
+        "image": "https://images.unsplash.com/photo-1605020420620-20c943cc4669?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGd1aXRhcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
+        "instructor": {
+            "name": "Jane Doe",
+            "email": "jane@example.com"
+        },
+        "available_seats": 8,
+        "price": 80.00
+    },
+    {
+       
+        "name": "Drum Class",
+        "image": "https://i5.walmartimages.com/asr/b506f068-4d6f-4828-bab2-22d2f43c5c5b_1.1d40eb966c8665437ed57c43a0d07abc.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+        "instructor": {
+            "name": "Alex Johnson",
+            "email": "alex@example.com"
+        },
+        "available_seats": 5,
+        "price": 120.00
+    }
+]
