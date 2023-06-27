@@ -3,6 +3,7 @@ import signUpLogo from '../../../assets/login/signUp.jpg'
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import useAuth from '../../../Hooks/UseAuth';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
     const { createUser, updateUserProfiles, } = useAuth();
@@ -22,6 +23,29 @@ const SignUp = () => {
                 console.log(loggedUser);
                 updateUserProfiles(data.name, data.photoURL)
                     .then(() => {
+
+                        const saveUsers = { name: data.name, email: data.email, }
+                        fetch('http://localhost:5000/allUsers', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUsers)
+
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'User SignUp Successfully',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                }
+                            })
                         reset()
                     })
                     .catch(error => console.log(error))

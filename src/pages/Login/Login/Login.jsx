@@ -4,6 +4,7 @@ import loginLogo from '../../../assets/login/login.jpg'
 import { useForm } from "react-hook-form";
 import { FaGoogle } from 'react-icons/fa';
 import useAuth from "../../../Hooks/UseAuth";
+import Swal from "sweetalert2";
 const Login = () => {
     const { loginUser, googleSignIn } = useAuth();
     const navigate = useNavigate();
@@ -19,6 +20,16 @@ const Login = () => {
                 const loggedUser = result.user;
 
                 console.log(loggedUser)
+
+                Swal.fire({
+                    title: 'User Login successful',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                })
                 reset()
                 navigate(from, { replace: true });
             })
