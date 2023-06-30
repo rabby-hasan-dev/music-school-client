@@ -27,19 +27,21 @@ const AddClasses = () => {
         })
             .then(res => res.json())
             .then(imgResponse => {
-                // console.log(imgResponse);
+
                 if (imgResponse.success) {
                     const imgURL = imgResponse.data.display_url;
                     const { name, price, availableSeats, descriptions } = data;
-                   
+
                     const classItem = {
-                        name, image: imgURL, instructor_name:user?.displayName, instructor_email:user?.email, price: parseFloat(price), Available_seats: parseFloat(availableSeats), descriptions, status:'pending'
+                        name, image: imgURL, instructor_name: user?.displayName, instructor_email: user?.email, price: parseFloat(price), available_seats: parseFloat(availableSeats), descriptions, status: 'pending'
                     }
 
-                    // console.log(classItem)
+                    console.log(classItem);
+
+
                     axiosSecure.post('/allClasses', classItem)
                         .then(data => {
-                            console.log('after posting new menu item', data.data)
+
                             if (data.data.insertedId) {
                                 reset();
                                 Swal.fire({
@@ -82,7 +84,7 @@ const AddClasses = () => {
                         <label className="label">
                             <span className="label-text font-semibold">Instructor name</span>
                         </label>
-                        <input type="text" readOnly  defaultValue={user?.displayName} placeholder="Instructor name"
+                        <input type="text" readOnly defaultValue={user?.displayName} placeholder="Instructor name"
                             {...register("instructor_name ", { required: true, maxLength: 120 })}
                             className="input input-bordered w-full " />
                     </div>
@@ -90,7 +92,7 @@ const AddClasses = () => {
                         <label className="label">
                             <span className="label-text font-semibold">Instructor Email</span>
                         </label>
-                        <input type="text" readOnly  defaultValue={user?.email} placeholder="Instructor Email"
+                        <input type="text" readOnly defaultValue={user?.email} placeholder="Instructor Email"
                             {...register("instructor_email ", { required: true, maxLength: 120 })}
                             className="input input-bordered w-full " />
                     </div>
