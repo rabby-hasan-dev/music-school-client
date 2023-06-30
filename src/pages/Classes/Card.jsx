@@ -1,6 +1,15 @@
 
+
 const Card = ({ classes }) => {
+
     const { name, image, price, available_seats, instructor_name, instructor_email, descriptions } = classes;
+
+    const handleSelectedClass = (selectedClass) => {
+        console.log(selectedClass)
+       
+
+
+    }
 
     return (
         <div>
@@ -14,7 +23,7 @@ const Card = ({ classes }) => {
                     <h2 className="text-2xl">Instructor: {instructor_name}</h2>
                     <p>Email:{instructor_email}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn">Select Class</button>
+                        <button onClick={() => handleSelectedClass(classes)} className="btn">Select Class</button>
                     </div>
                 </div>
             </div>

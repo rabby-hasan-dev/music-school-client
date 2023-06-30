@@ -19,6 +19,7 @@ import ManageClasses from "../pages/Dashboard/Admin/ManageClasses/ManageClasses"
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import AllUsers from "../pages/Dashboard/Admin/AllUsers/AllUsers";
 import AdminRoute from "./AdminRoute";
+import UpdateClass from "../pages/Dashboard/Instructors/UpdateClass";
 
 
 
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
             {
                 path:"addClass",
                 element:<AddClasses></AddClasses>
+            },
+            {
+                path:"updateClass",
+                element:<UpdateClass></UpdateClass>
             },
            
             {
