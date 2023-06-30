@@ -1,12 +1,13 @@
 import siteLogo from '../../../assets/logo/musicSchool.jpg'
 import signUpLogo from '../../../assets/login/signUp.jpg'
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from '../../../Hooks/UseAuth';
 import Swal from 'sweetalert2';
 
 const SignUp = () => {
     const { createUser, updateUserProfiles, } = useAuth();
+    const navigate=useNavigate();
 
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -47,6 +48,8 @@ const SignUp = () => {
                                 }
                             })
                         reset()
+                        navigate('/')
+
                     })
                     .catch(error => console.log(error))
             })

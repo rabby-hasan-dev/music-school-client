@@ -42,6 +42,29 @@ const ManageUsers = () => {
             })
 
     }
+    const handleMakeInstructor = (user) => {
+      
+        fetch(`http://localhost:5000/allUsers/instructor/${user._id}`, {
+            method: 'PATCH',
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user.name} is an Instructor Now!`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    console.log(data);
+                }
+            })
+
+    }
+
     const handleDelete = () => {
 
     }
@@ -60,7 +83,8 @@ const ManageUsers = () => {
                                 <th></th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Role</th>
+                                <th>Make Admin</th>
+                                <th>Make Instructor</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -76,6 +100,13 @@ const ManageUsers = () => {
 
                                         {
                                             user.role === 'admin' ? 'Admin' : <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-400 text-white "><FaUserShield></FaUserShield></button>
+                                        }
+
+                                    </td>
+                                    <td>
+
+                                        {
+                                            user.role === 'instructor' ? 'Instructor' : <button onClick={() => handleMakeInstructor(user)} className="btn btn-ghost bg-orange-400 text-white "><FaUserShield></FaUserShield></button>
                                         }
 
                                     </td>

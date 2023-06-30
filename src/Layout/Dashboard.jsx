@@ -1,15 +1,21 @@
 import { FaHome, FaUtensils, FaBook, FaUsers, FaBars, FaBookReader, } from "react-icons/fa";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../Hooks/useAdmin";
+import useInstructor from "../Hooks/useInstructor";
 
 
 
 const Dashboard = () => {
 
+    const [isAdmin]=useAdmin();
+   const [isInstructor]=useInstructor();
+   
+
 
     // const isAdmin = false;
-    const isAdmin = true;
-    // const isInstructors = true
-    const isInstructors = false
+    // const isAdmin = true;
+    // const isInstructor = true
+    // const isInstructor = false
 
     return (
         <div>
@@ -36,7 +42,7 @@ const Dashboard = () => {
                                 <li>
                                     <NavLink to="/dashboard/allUsers" > <FaUsers></FaUsers> All Users</NavLink>
                                 </li>
-                            </> : isInstructors ? <>
+                            </> : isInstructor ? <>
                                 <li><NavLink to="/dashboard/home" ><FaHome></FaHome>Admin Home</NavLink></li>
 
                                 <li><NavLink to="/dashboard/addClass" > <FaUtensils></FaUtensils> Add class</NavLink></li>
