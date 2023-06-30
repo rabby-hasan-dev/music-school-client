@@ -2,11 +2,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import siteLogo from '../../../assets/logo/musicSchool.jpg'
 import loginLogo from '../../../assets/login/login.jpg'
 import { useForm } from "react-hook-form";
-import { FaGoogle } from 'react-icons/fa';
+
 import useAuth from "../../../Hooks/UseAuth";
 import Swal from "sweetalert2";
+import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 const Login = () => {
-    const { loginUser, googleSignIn } = useAuth();
+    const { loginUser, } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
@@ -82,7 +83,7 @@ const Login = () => {
                             </form>
                             <div className="form-control mt-6">
 
-                                <button onClick={googleSignIn} className="btn "> <FaGoogle className="text-red-600"></FaGoogle> Google</button>
+                               <SocialLogin></SocialLogin>
                             </div>
                             <p> <small> New Here? <Link className='link' to='/signUp'>Create an Account</Link> </small></p>
                         </div>

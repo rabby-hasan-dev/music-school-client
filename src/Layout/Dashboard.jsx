@@ -6,8 +6,8 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 const Dashboard = () => {
 
 
-    const isAdmin = false;
-    // const isAdmin = true;
+    // const isAdmin = false;
+    const isAdmin = true;
     // const isInstructors = true
     const isInstructors = false
 
