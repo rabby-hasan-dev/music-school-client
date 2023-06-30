@@ -7,9 +7,9 @@ import useInstructor from "../Hooks/useInstructor";
 
 const Dashboard = () => {
 
-    const [isAdmin]=useAdmin();
-   const [isInstructor]=useInstructor();
-   
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
+
 
 
     // const isAdmin = false;
@@ -32,7 +32,9 @@ const Dashboard = () => {
                     <ul className="menu p-4 w-80 h-full bg-slate-200 uppercase ">
                         {/* Sidebar content here */}
                         {
-                            isAdmin ? <>   <li><NavLink to="/dashboard/home" ><FaHome></FaHome>Admin Home</NavLink></li>
+                            isAdmin ? <>
+                                <h3 className="text-3xl text-center text-red-600">Admin</h3>
+                                <li><NavLink to="/dashboard/home" ><FaHome></FaHome>Admin Home</NavLink></li>
 
 
                                 <li><NavLink to="/dashboard/manageClasses" ><FaBars></FaBars> Manage classes</NavLink></li>
@@ -43,13 +45,15 @@ const Dashboard = () => {
                                     <NavLink to="/dashboard/allUsers" > <FaUsers></FaUsers> All Users</NavLink>
                                 </li>
                             </> : isInstructor ? <>
-                                <li><NavLink to="/dashboard/home" ><FaHome></FaHome>Admin Home</NavLink></li>
+                                <h3 className="text-3xl text-center text-red-600">Instructor</h3>
+                                <li><NavLink to="/dashboard/home" ><FaHome></FaHome>Instructor Home</NavLink></li>
 
                                 <li><NavLink to="/dashboard/addClass" > <FaUtensils></FaUtensils> Add class</NavLink></li>
                                 <li><NavLink to="/dashboard/myClasses" > <FaUtensils></FaUtensils>My Classes</NavLink></li>
 
 
                             </> : <>
+                                <h3 className="text-3xl text-center text-red-600">Student</h3>
 
                                 <li><NavLink to="/dashboard/home" ><FaHome></FaHome>Student Home</NavLink></li>
                                 <li><NavLink to="/dashboard/selectedClass" ><FaBook></FaBook> My Selected Class</NavLink></li>
