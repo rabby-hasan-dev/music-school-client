@@ -75,7 +75,7 @@ const ManageClasses = () => {
                                     <div className="btn-group btn-group-vertical">
                                         <button className="btn btn-sm">pending</button>
                                         <button className="btn btn-sm">approved</button>
-                                        <button className="btn btn-sm">denied</button>
+                                        <button className="btn btn-sm">Send feedBack</button>
                                     </div>
                                     
                                 </td>
