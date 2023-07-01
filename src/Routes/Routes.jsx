@@ -20,6 +20,7 @@ import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import AllUsers from "../pages/Dashboard/Admin/AllUsers/AllUsers";
 import AdminRoute from "./AdminRoute";
 import UpdateClass from "../pages/Dashboard/Instructors/UpdateClass";
+import Payment from "../pages/Dashboard/Payments/Payment/Payment";
 
 
 
@@ -89,6 +90,10 @@ const router = createBrowserRouter([
             {
                 path:"enrollClass",
                 element:<EnrollClasses></EnrollClasses>
+            },
+            {
+                path:"payment",
+                element:<Payment></Payment>
             },
            
         ]
