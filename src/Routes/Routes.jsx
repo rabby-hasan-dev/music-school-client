@@ -11,7 +11,7 @@ import Dashboard from "../Layout/Dashboard";
 import AddClasses from "../pages/Dashboard/Instructors/AddClasses";
 import MyClasses from "../pages/Dashboard/Instructors/MyClasses";
 import SelectedClass from "../pages/Dashboard/Students/SelectedClass";
-import EnrollClasses from "../pages/Dashboard/Students/EnrollClasses";
+
 import ManageClasses from "../pages/Dashboard/Admin/ManageClasses/ManageClasses";
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import AllUsers from "../pages/Dashboard/Admin/AllUsers/AllUsers";
@@ -19,6 +19,7 @@ import AdminRoute from "./AdminRoute";
 import UpdateClass from "../pages/Dashboard/Instructors/UpdateClass";
 import Payment from "../pages/Dashboard/Payments/Payment/Payment";
 import PrivateRoute from "./PrivateRoute";
+import EnrollClasses from "../pages/Dashboard/Students/EnrollClasses/EnrollClasses";
 
 
 

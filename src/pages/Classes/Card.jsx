@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/UseAuth";
 import Swal from "sweetalert2";
 import useSelectedClass from "../../Hooks/useSelectedClass";
+import { useState } from "react";
 
 
 const Card = ({ classes }) => {
@@ -9,7 +10,9 @@ const Card = ({ classes }) => {
     const { _id, name, image, price, available_seats, instructor_name, instructor_email, descriptions } = classes;
     const navigate = useNavigate();
     const location = useLocation();
-    const [,refetch]=useSelectedClass()
+    const [, refetch] = useSelectedClass()
+    const [disabled, setDisabled] = useState(false);
+    
 
     const { user } = useAuth();
     const handleSelectedClass = (classItem) => {
@@ -27,6 +30,7 @@ const Card = ({ classes }) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
+                        setDisabled(true);
                         refetch()
                         // refetch and update cart item number
                         Swal.fire({
@@ -71,7 +75,7 @@ const Card = ({ classes }) => {
                     <h2 className="text-2xl">Instructor: {instructor_name}</h2>
                     <p>Email:{instructor_email}</p>
                     <div className="card-actions justify-end">
-                        <button onClick={() => handleSelectedClass(classes)} className="btn">Select Class</button>
+                        <button disabled={disabled} onClick={() => handleSelectedClass(classes)} className="btn">Select Class</button>
                     </div>
                 </div>
             </div>
