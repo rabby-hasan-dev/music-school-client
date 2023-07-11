@@ -67,7 +67,7 @@ const MyClasses = () => {
                                 <td className="text-center">{userClasses.length}</td>
                                 <td>{classItem.status}</td>
                                 <td>
-                                   <Link to="/dashboard/updateClass"> <button className="btn btn-sm">Update</button></Link>
+                                    <Link to={`/dashboard/updateClass/${classItem._id}`}> <button className="btn btn-sm">Update</button></Link>
                                 </td>
                                 <td>
                                     <button className="btn btn-sm">Feedback</button>

@@ -52,49 +52,50 @@ const router = createBrowserRouter([
         ]
     },
 
-     {
+    {
         path: 'dashboard',
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
             {
-                path:"manageClasses",
-                element:<AdminRoute><ManageClasses></ManageClasses></AdminRoute>
+                path: "manageClasses",
+                element: <AdminRoute><ManageClasses></ManageClasses></AdminRoute>
             },
-           
+
             {
-                path:"manageUsers",
-                element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>
-            },
-            {
-                path:"allUsers",
-                element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
+                path: "manageUsers",
+                element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
             },
             {
-                path:"addClass",
-                element:<AddClasses></AddClasses>
+                path: "allUsers",
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
             },
             {
-                path:"updateClass",
-                element:<UpdateClass></UpdateClass>
-            },
-           
-            {
-                path:"myClasses",
-                element:<MyClasses></MyClasses>
+                path: "addClass",
+                element: <AddClasses></AddClasses>
             },
             {
-                path:"selectedClass",
-                element:<SelectedClass></SelectedClass>
+                path: "updateClass/:id",
+                element: <UpdateClass></UpdateClass>,
+                loader: ({ params }) => fetch(`http://localhost:5000/allClasses/${params.id}`)
+            },
+
+            {
+                path: "myClasses",
+                element: <MyClasses></MyClasses>
             },
             {
-                path:"enrollClass",
-                element:<EnrollClasses></EnrollClasses>
+                path: "selectedClass",
+                element: <SelectedClass></SelectedClass>
             },
             {
-                path:"payment",
-                element:<Payment></Payment>
+                path: "enrollClass",
+                element: <EnrollClasses></EnrollClasses>
             },
-           
+            {
+                path: "payment",
+                element: <Payment></Payment>
+            },
+
         ]
     }
 ]);
