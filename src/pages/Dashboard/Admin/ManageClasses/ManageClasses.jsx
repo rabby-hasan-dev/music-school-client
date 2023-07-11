@@ -1,19 +1,50 @@
 import { useEffect, useState } from "react";
+import useAxiosSecure from "../../../../Hooks/useAxiosSecure ";
+import Swal from "sweetalert2";
+import UseClasses from "../../../../Hooks/UseClasses";
+
 
 
 
 const ManageClasses = () => {
+    const [axiosSecure] = useAxiosSecure();
+    const [classes, , refetch]=UseClasses();
 
-    const [classes, setClasses] = useState([])
-    // console.log(classess);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/allClasses')
-            .then(res => res.json())
+    const handleApproved = (id) => {
+        axiosSecure.patch(`/allClasses/approved/${id}`)
             .then(data => {
-                setClasses(data)
+                if (data.data.modifiedCount > 0) {
+                    refetch();
+
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Admin Approved successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
             })
-    }, [])
+    }
+    const handleDeny = (id) => {
+        axiosSecure.patch(`/allClasses/deny/${id}`)
+            .then(data => {
+                if (data.data.modifiedCount > 0) {
+                    refetch();
+
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Admin Deny successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
+
+
     return (
         <div className="w-full">
 
@@ -38,6 +69,7 @@ const ManageClasses = () => {
 
                             <th>Status</th>
                             <th>Action</th>
+                            <th>FeedBack</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,24 +92,31 @@ const ManageClasses = () => {
                                     </div>
                                 </td>
                                 <td>
-                                    {classItem.name}
+                                    {classItem?.name}
                                 </td>
                                 <td>
-                                    {classItem?.instructor?.name}
+                                    {classItem?.instructor_name}
                                 </td>
                                 <td>
-                                    {classItem?.instructor?.email}
+                                    {classItem?.instructor_email}
                                 </td>
-                                <td>{classItem.available_seats}</td>
-                                <td>${classItem.price}</td>
-                                <td>pending,approved,denied</td>
+                                <td>{classItem?.available_seats}</td>
+                                <td>${classItem?.price}</td>
+                                <td>{classItem?.status}</td>
                                 <td>
-                                    <div className="btn-group btn-group-vertical">
-                                        <button className="btn btn-sm">pending</button>
-                                        <button className="btn btn-sm">approved</button>
-                                        <button className="btn btn-sm">Send feedBack</button>
+
+                                    <div className="btn-group btn-group-vertical  ">
+
+                                        <button onClick={() => handleApproved(classItem._id)} className="btn btn-sm   ">approved</button>
+
+                                        <button onClick={()=> handleDeny(classItem._id)} className="btn btn-sm">Deny</button>
+
                                     </div>
-                                    
+
+                                </td>
+                                <td>
+                                    <button className="btn btn-sm">Send feedBack</button>
+
                                 </td>
 
                             </tr>)

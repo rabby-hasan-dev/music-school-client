@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../Hooks/useAxiosSecure ';
 import useAuth from '../../../Hooks/UseAuth';
-import { Navigate, useLoaderData, useNavigate } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 
 const UpdateClass = () => {
