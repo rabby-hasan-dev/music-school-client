@@ -6,11 +6,22 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../../Hooks/UseAuth";
 import Swal from "sweetalert2";
 import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
+import { useState } from "react";
 const Login = () => {
     const { loginUser, } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
+    const [passwordType, setPasswordType] = useState("password");
+
+    const togglePassword =()=>{
+        if(passwordType==="password")
+        {
+         setPasswordType("text")
+         return;
+        }
+        setPasswordType("password")
+      }
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -68,11 +79,19 @@ const Login = () => {
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="password" {...register("password", { required: true, minLength: 6, })} name="password" placeholder="password" className="input input-bordered" />
+
+                                    <div className="input-group">
+                                        <input type={passwordType} {...register("password", { required: true, minLength: 6, })} name="password" placeholder="password" className="input input-bordered" />
+                                       {
+                                        passwordType==="text"?<button onClick={ togglePassword} className="btn ">Hide</button> : <button onClick={togglePassword} className="btn ">Show</button>
+                                       }
+                                    </div>
+
                                     {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                                     <label className="label">
                                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                     </label>
+
                                 </div>
 
                                 <div className="form-control mt-6">
@@ -83,7 +102,7 @@ const Login = () => {
                             </form>
                             <div className="form-control mt-6">
 
-                               <SocialLogin></SocialLogin>
+                                <SocialLogin></SocialLogin>
                             </div>
                             <p> <small> New Here? <Link className='link' to='/signUp'>Create an Account</Link> </small></p>
                         </div>

@@ -12,7 +12,10 @@ const SignUp = () => {
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-
+    const handleConfirmPassWord=(event)=>{
+        event.preventDefault();
+        console.log(event.target.value)
+    }
 
     const onSubmit = data => {
 
@@ -25,7 +28,7 @@ const SignUp = () => {
                 updateUserProfiles(data.name, data.photoURL)
                     .then(() => {
 
-                        const saveUsers = { name: data.name, email: data.email, }
+                        const saveUsers = { name: data.name, email: data.email,picture:data.photoURL }
                         fetch('http://localhost:5000/allUsers', {
                             method: 'POST',
                             headers: {
@@ -125,9 +128,9 @@ const SignUp = () => {
                                     <label className="label">
                                         <span className="label-text">Confirm Password</span>
                                     </label>
-                                    <input type="password"  {...register("password", {
+                                    <input  type="password"  {...register("password", {
                                         required: true,
-                                    })} placeholder="Confirm Password" className="input input-bordered" />
+                                    })} placeholder="Confirm Password" className="input input-bordered" />    
                                     {errors.password?.type === 'required' && <p className="text-red-600">Password is not match</p>}
 
 

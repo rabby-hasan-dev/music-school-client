@@ -1,14 +1,15 @@
-import { useEffect, useState } from "react";
+
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure ";
 import Swal from "sweetalert2";
 import UseClasses from "../../../../Hooks/UseClasses";
+import { Link } from "react-router-dom";
 
 
 
 
 const ManageClasses = () => {
     const [axiosSecure] = useAxiosSecure();
-    const [classes, , refetch]=UseClasses();
+    const [classes, , refetch] = UseClasses();
 
 
     const handleApproved = (id) => {
@@ -109,13 +110,15 @@ const ManageClasses = () => {
 
                                         <button onClick={() => handleApproved(classItem._id)} className="btn btn-sm   ">approved</button>
 
-                                        <button onClick={()=> handleDeny(classItem._id)} className="btn btn-sm">Deny</button>
+                                        <button onClick={() => handleDeny(classItem._id)} className="btn btn-sm">Deny</button>
 
                                     </div>
 
                                 </td>
                                 <td>
-                                    <button className="btn btn-sm">Send feedBack</button>
+                                    <Link to={`/dashboard/feedBack/${classItem._id}`}>
+                                        <button className="btn btn-sm">Send feedBack</button>
+                                    </Link>
 
                                 </td>
 

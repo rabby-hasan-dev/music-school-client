@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Instructors = () => {
     const [instructors, setInstructors] = useState([])
@@ -20,10 +21,11 @@ const Instructors = () => {
                     <div className="card-body">
                         <h2 className="card-title">{instructor.name}</h2>
                         <p>{instructor.email}</p>
-                        <p> Number of Classes taken:{instructor.total_class
-                        }</p>
+                       
                         <div className="card-actions justify-end">
-                            <button className="btn ">See more information</button>
+                          <Link to="/instructorsClasses">
+                          <button className="btn ">See more information</button>
+                          </Link>
                         </div>
                     </div>
                 </div></>)

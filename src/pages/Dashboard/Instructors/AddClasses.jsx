@@ -33,7 +33,7 @@ const AddClasses = () => {
                     const { name, price, availableSeats, descriptions } = data;
 
                     const classItem = {
-                        name, image: imgURL, instructor_name: user?.displayName, instructor_email: user?.email, price: parseFloat(price), available_seats: parseFloat(availableSeats), descriptions, status: 'pending'
+                        name, image: imgURL, instructor_name: user?.displayName, instructor_email: user?.email, price: parseFloat(price), available_seats: parseFloat(availableSeats), descriptions, status: 'pending',
                     }
 
                     console.log(classItem);

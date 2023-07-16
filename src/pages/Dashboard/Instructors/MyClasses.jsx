@@ -70,7 +70,13 @@ const MyClasses = () => {
                                     <Link to={`/dashboard/updateClass/${classItem._id}`}> <button className="btn btn-sm">Update</button></Link>
                                 </td>
                                 <td>
-                                    <button className="btn btn-sm">Feedback</button>
+                                    
+                                        <button className="btn btn-sm">Feedback</button>
+                                   
+                                    {/* <Link to='/dashboard/feedBackInstructor'>
+                                        <button className="btn btn-sm">Feedback</button>
+                                    </Link> */}
+
                                 </td>
 
                             </tr>)

@@ -20,6 +20,9 @@ import UpdateClass from "../pages/Dashboard/Instructors/UpdateClass";
 import Payment from "../pages/Dashboard/Payments/Payment/Payment";
 import PrivateRoute from "./PrivateRoute";
 import EnrollClasses from "../pages/Dashboard/Students/EnrollClasses/EnrollClasses";
+import FeedBack from "../pages/Dashboard/Admin/ManageClasses/FeedBack";
+import FeedBackInstructor from "../pages/Dashboard/Instructors/FeedBackInstructor";
+import InstructorsClasses from "../pages/Instructors/InstructorsClasses";
 
 
 
@@ -49,6 +52,10 @@ const router = createBrowserRouter([
                 path: 'instructors',
                 element: <Instructors></Instructors>
             },
+            {
+                path: 'instructorsClasses',
+                element: <InstructorsClasses></InstructorsClasses>
+            },
         ]
     },
 
@@ -66,12 +73,21 @@ const router = createBrowserRouter([
                 element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
             },
             {
+                path: "feedBack/:id",
+                element: <FeedBack></FeedBack>,
+                loader: ({ params }) => fetch(`http://localhost:5000/allClasses/${params.id}`)
+            },
+            {
                 path: "allUsers",
                 element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
             },
             {
                 path: "addClass",
                 element: <AddClasses></AddClasses>
+            },
+            {
+                path: "feedBackInstructor",
+                element: <FeedBackInstructor></FeedBackInstructor>
             },
             {
                 path: "updateClass/:id",

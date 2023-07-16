@@ -30,8 +30,8 @@ const Card = ({ classes }) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
-                        setDisabled(true);
                         refetch()
+                       
                         // refetch and update cart item number
                         Swal.fire({
                             position: 'top-end',
@@ -44,6 +44,7 @@ const Card = ({ classes }) => {
                     }
 
                 })
+                setDisabled(true);
         }
 
         else {
