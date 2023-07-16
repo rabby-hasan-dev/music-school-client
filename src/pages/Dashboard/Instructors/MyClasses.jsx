@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const MyClasses = () => {
     const { user } = useAuth();
     const [userClasses, setUserClasses] = useState([]);
-    console.log(userClasses);
+    // console.log(userClasses);
 
     useEffect(() => {
         fetch(`http://localhost:5000/allClasses?email=${user?.email}`)
@@ -22,6 +22,11 @@ const MyClasses = () => {
                 <h3 className="text-3xl">Total Class :{userClasses.length}</h3>
 
             </div>
+
+
+           
+            {/* class table */}
+
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
@@ -39,7 +44,7 @@ const MyClasses = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
+                     
                         {
                             userClasses.map((classItem, index) => <tr
                                 key={classItem._id}
@@ -70,19 +75,21 @@ const MyClasses = () => {
                                     <Link to={`/dashboard/updateClass/${classItem._id}`}> <button className="btn btn-sm">Update</button></Link>
                                 </td>
                                 <td>
-                                    
-                                        <button className="btn btn-sm">Feedback</button>
+
                                    
-                                    {/* <Link to='/dashboard/feedBackInstructor'>
+
+                                   
+                                  
+                                    <Link to='/dashboard/feedBackInstructor'>
                                         <button className="btn btn-sm">Feedback</button>
-                                    </Link> */}
+                                    </Link>
 
                                 </td>
 
                             </tr>)
                         }
 
-
+                        
 
 
                     </tbody>

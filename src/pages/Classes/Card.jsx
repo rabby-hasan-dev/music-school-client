@@ -3,21 +3,26 @@ import useAuth from "../../Hooks/UseAuth";
 import Swal from "sweetalert2";
 import useSelectedClass from "../../Hooks/useSelectedClass";
 import { useState } from "react";
+import useInstructor from "../../Hooks/useInstructor";
+import useAdmin from "../../Hooks/useAdmin";
 
 
 const Card = ({ classes }) => {
+   const [isAdmin, ]=useAdmin();
+    const  [isInstructor]=useInstructor()
 
     const { _id, name, image, price, available_seats, instructor_name, instructor_email, descriptions } = classes;
     const navigate = useNavigate();
     const location = useLocation();
     const [, refetch] = useSelectedClass()
-    const [disabled, setDisabled] = useState(false);
-    
+    const [disabled] = useState(true);
+
+  
 
     const { user } = useAuth();
     const handleSelectedClass = (classItem) => {
 
-        if (user && user?.email) {
+        if (user && user?.email ) {
             const selectedClass = { classId: _id, name, image, price, email: user.email }
 
             fetch('http://localhost:5000/selectedClass', {
@@ -44,7 +49,7 @@ const Card = ({ classes }) => {
                     }
 
                 })
-                setDisabled(true);
+               
         }
 
         else {
@@ -76,7 +81,7 @@ const Card = ({ classes }) => {
                     <h2 className="text-2xl">Instructor: {instructor_name}</h2>
                     <p>Email:{instructor_email}</p>
                     <div className="card-actions justify-end">
-                        <button disabled={disabled} onClick={() => handleSelectedClass(classes)} className="btn">Select Class</button>
+                        <button disabled={isAdmin?disabled:isInstructor?disabled:null} onClick={() => handleSelectedClass(classes)} className="btn">Select Class</button>
                     </div>
                 </div>
             </div>

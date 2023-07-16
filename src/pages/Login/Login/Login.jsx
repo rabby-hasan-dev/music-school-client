@@ -83,7 +83,7 @@ const Login = () => {
                                     <div className="input-group">
                                         <input type={passwordType} {...register("password", { required: true, minLength: 6, })} name="password" placeholder="password" className="input input-bordered" />
                                        {
-                                        passwordType==="text"?<button onClick={ togglePassword} className="btn ">Hide</button> : <button onClick={togglePassword} className="btn ">Show</button>
+                                        passwordType==="text"?<button onClick={ ()=>togglePassword} className="btn ">Hide</button> : <button onClick={()=>togglePassword} className="btn ">Show</button>
                                        }
                                     </div>
 

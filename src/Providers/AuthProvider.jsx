@@ -36,7 +36,7 @@ const logOut = () => {
 useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, currentUser => {
         setUser(currentUser);
-        console.log(currentUser)
+        // console.log(currentUser)
 
         if (currentUser && currentUser?.email) {
             axios.post('http://localhost:5000/jwt', { email: currentUser?.email })
@@ -44,7 +44,7 @@ useEffect(() => {
                 
                 localStorage.setItem('access-token',data.data.token);
                 // console.log(data.data.token)
-                console.log(data)
+               
                 setLoading(false)
             })
         }
