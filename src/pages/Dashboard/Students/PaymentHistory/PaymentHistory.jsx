@@ -1,24 +1,13 @@
-import { useEffect, useState } from "react";
-import useAuth from "../../../../Hooks/UseAuth";
 
-
+import UsePayments from "../../../../Hooks/UsePayments";
 const PaymentHistory = () => {
-    const { user } = useAuth();
-    const [paymentData, setPaymentData] = useState([]);
+    const payments=UsePayments();
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/payments?email=${user?.email}`)
-            .then(res => res.json())
-            .then(data => {
-                setPaymentData(data);
-                console.log(data);
-            })
-    }, [])
     return (
         <div className="w-full">
             <h3 className="text-5xl text-center mb-12 uppercase font-semi-bold h-[60]">Payment History</h3>
             <div className="uppercase  font-semi-bold h-[60] flex justify-evenly items-center">
-                <h3 className="text-2xl">total Payment :{paymentData.length}</h3>
+                <h3 className="text-2xl">total Payment History :{ payments.length}</h3>
 
 
             </div>
@@ -38,7 +27,7 @@ const PaymentHistory = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            paymentData.map((paymentItem, index) => <tr
+                             payments.map((paymentItem, index) => <tr
                                 key={paymentItem._id}
                             >
                                 <th>

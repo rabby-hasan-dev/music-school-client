@@ -129,7 +129,7 @@ const CheckoutForm = ({ selectedClass, price }) => {
                 cardError && <p className="text-red-600 text-center ">{cardError}</p>
             }
             {
-                transactionId && <p className="text-green-500 text-center "> TransactionId:{transactionId}</p>
+                transactionId && <p className="text-green-500 text-center "> Payment Successful</p>
             }
         </>
     );

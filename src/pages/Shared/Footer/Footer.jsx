@@ -2,8 +2,8 @@ import siteLogo from '../../../assets/logo/musicSchool.jpg'
 
 const Footer = () => {
     return (
-        <footer>
-         
+        <footer className='dark:bg-slate-900  dark:text-gray-100'>
+
             <div className="footer p-10 bg-base-200 text-base-content">
                 <div className="avatar">
                     <div className="w-24 rounded-xl">

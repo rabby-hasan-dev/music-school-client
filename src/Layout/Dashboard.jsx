@@ -19,7 +19,7 @@ const Dashboard = () => {
 
     return (
         <div>
-            <div className="drawer lg:drawer-open">
+            <div className="drawer dark:bg-slate-900 dark:text-gray-100 lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
                     {/* Page content here */}

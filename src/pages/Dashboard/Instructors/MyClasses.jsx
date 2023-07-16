@@ -23,7 +23,7 @@ const MyClasses = () => {
 
             </div>
 
-
+        
            
             {/* class table */}
 

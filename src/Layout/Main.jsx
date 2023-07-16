@@ -7,7 +7,7 @@ const Main = () => {
     const location = useLocation()
     const noHeaderFooter = location.pathname.includes('login') || location.pathname.includes('signUp');
     return (
-        <div>
+        <div className=" dark:text-gray-100 dark:bg-slate-900 duration-100">
 
             {noHeaderFooter || <Navbar></Navbar>}
             <Outlet></Outlet>
