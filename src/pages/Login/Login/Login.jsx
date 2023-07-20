@@ -7,6 +7,7 @@ import useAuth from "../../../Hooks/UseAuth";
 import Swal from "sweetalert2";
 import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Login = () => {
     const { loginUser, } = useAuth();
     const navigate = useNavigate();
@@ -25,13 +26,13 @@ const Login = () => {
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data)
+    
 
         loginUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
 
-                console.log(loggedUser)
+                // console.log(loggedUser)
 
                 Swal.fire({
                     title: 'User Login successful',
@@ -46,7 +47,7 @@ const Login = () => {
                 navigate(from, { replace: true });
             })
             .catch(error => {
-                console.log(error);
+                // console.log(error);
             })
 
     }
@@ -83,7 +84,7 @@ const Login = () => {
                                     <div className="input-group">
                                         <input type={passwordType} {...register("password", { required: true, minLength: 6, })} name="password" placeholder="password" className="input input-bordered" />
                                        {
-                                        passwordType==="text"?<button onClick={ togglePassword} className="btn ">Hide</button> : <button onClick={togglePassword} className="btn ">Show</button>
+                                        passwordType==="text"?<button onClick={ togglePassword} className="btn "><FaEyeSlash></FaEyeSlash> </button> : <button onClick={togglePassword} className="btn "><FaEye></FaEye></button>
                                        }
                                     </div>
 

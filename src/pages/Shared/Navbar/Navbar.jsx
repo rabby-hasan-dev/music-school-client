@@ -4,10 +4,14 @@ import siteLogo from '../../../assets/logo/musicSchool.jpg'
 import useAuth from "../../../Hooks/UseAuth";
 import DarkModeToggle from "react-dark-mode-toggle";
 import { useState } from "react";
+import useAdmin from "../../../Hooks/useAdmin";
+import useInstructor from "../../../Hooks/useInstructor";
 
 const Navbar = () => {
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
     const [isDarkMode, setIsDarkMode] = useState(() => false);
-    console.log(isDarkMode);
+    // console.log(isDarkMode);
 
     const { user, logOut } = useAuth();
 
@@ -24,11 +28,13 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/instructors">Instructors</Link></li>
         <li> <Link to='/classes'>Classes</Link></li>
-
+        {
+            isAdmin? <li> <Link to="/dashboard/adminHome" >Dashboard</Link></li>:isInstructor?<li> <Link to="/dashboard/instructorHome" >Dashboard</Link></li>:<li> <Link to="/dashboard/studentHome" >Dashboard</Link></li>
+        }
 
         {
             user ? <>
-                <li> <Link to="/dashboard" >Dashboard</Link></li>
+               
                 <li><button onClick={logOut}>Log Out</button></li>
             </> : <> </>
         }

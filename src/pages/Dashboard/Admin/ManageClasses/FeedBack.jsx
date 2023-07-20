@@ -17,7 +17,6 @@ const FeedBack = () => {
 
     const onSubmit = data => {
         const feedBack={feedBack:data.feedBack}
-        console.log(feedBack)
         axiosSecure.patch(`/allClasses/feedBack/${classData._id}`,feedBack)
         .then(data => {
             if (data.data.modifiedCount > 0) {

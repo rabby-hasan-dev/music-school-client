@@ -24,6 +24,9 @@ import FeedBack from "../pages/Dashboard/Admin/ManageClasses/FeedBack";
 import FeedBackInstructor from "../pages/Dashboard/Instructors/FeedBackInstructor";
 import InstructorsClasses from "../pages/Instructors/InstructorsClasses";
 import PaymentHistory from "../pages/Dashboard/Students/PaymentHistory/PaymentHistory";
+import AdminHome from "../pages/Dashboard/Admin/AdminHome/AdminHome";
+import InstructorHome from "../pages/Dashboard/Instructors/instructorHome/instructorHome";
+import StudentHome from "../pages/Dashboard/Students/StudentHome/StudentHome";
 
 
 
@@ -65,6 +68,10 @@ const router = createBrowserRouter([
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
             {
+                path: "adminHome",
+                element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
+            },
+            {
                 path: "manageClasses",
                 element: <AdminRoute><ManageClasses></ManageClasses></AdminRoute>
             },
@@ -83,6 +90,10 @@ const router = createBrowserRouter([
                 element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
             },
             {
+                path: "instructor",
+                element: <InstructorHome></InstructorHome>
+            },
+            {
                 path: "addClass",
                 element: <AddClasses></AddClasses>
             },
@@ -97,6 +108,10 @@ const router = createBrowserRouter([
             },
 
             {
+                path: "studentHome",
+                element: <StudentHome></StudentHome>
+            },
+            {
                 path: "myClasses",
                 element: <MyClasses></MyClasses>
             },
@@ -109,7 +124,7 @@ const router = createBrowserRouter([
                 element: <EnrollClasses></EnrollClasses>
             },
             {
-                path: "payment",
+                path: "payment/:id",
                 element: <Payment></Payment>
             },
             {

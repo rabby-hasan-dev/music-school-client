@@ -5,11 +5,11 @@ import axios from 'axios';
 import useAuth from './UseAuth';
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'http://localhost:5000/',
 });
 
 const useAxiosSecure = () => {
-    const { logOut } =useAuth(); 
+    const { logOut } = useAuth();
     const navigate = useNavigate();
 
 
@@ -33,7 +33,7 @@ const useAxiosSecure = () => {
                 return Promise.reject(error);
             }
         );
-    }, [logOut, navigate, axiosSecure]);
+    }, [logOut, navigate]);
 
     return [axiosSecure];
 };

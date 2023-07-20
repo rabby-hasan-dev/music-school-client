@@ -8,21 +8,21 @@ import useAdmin from "../../Hooks/useAdmin";
 
 
 const Card = ({ classes }) => {
-   const [isAdmin, ]=useAdmin();
-    const  [isInstructor]=useInstructor()
+    const [isAdmin,] = useAdmin();
+    const [isInstructor,] = useInstructor()
 
-    const { _id, name, image, price, available_seats, instructor_name, instructor_email, descriptions } = classes;
+    const { _id, name, image, price, available_seats, instructor_name, instructor_email, } = classes;
     const navigate = useNavigate();
     const location = useLocation();
     const [, refetch] = useSelectedClass()
     const [disabled] = useState(true);
 
-  
+
 
     const { user } = useAuth();
     const handleSelectedClass = (classItem) => {
 
-        if (user && user?.email ) {
+        if (user && user?.email) {
             const selectedClass = { classId: _id, name, image, price, email: user.email }
 
             fetch('http://localhost:5000/selectedClass', {
@@ -36,7 +36,7 @@ const Card = ({ classes }) => {
                 .then(data => {
                     if (data.insertedId) {
                         refetch()
-                       
+
                         // refetch and update cart item number
                         Swal.fire({
                             position: 'top-end',
@@ -45,11 +45,11 @@ const Card = ({ classes }) => {
                             showConfirmButton: false,
                             timer: 1500
                         })
-                        console.log(data)
+                       
                     }
 
                 })
-               
+
         }
 
         else {
@@ -81,7 +81,7 @@ const Card = ({ classes }) => {
                     <h2 className="text-2xl">Instructor: {instructor_name}</h2>
                     <p>Email:{instructor_email}</p>
                     <div className="card-actions justify-end">
-                        <button disabled={isAdmin?disabled:isInstructor?disabled:null} onClick={() => handleSelectedClass(classes)} className="btn">Select Class</button>
+                        <button disabled={isAdmin ? disabled : isInstructor ? disabled : available_seats == 0 ? disabled : null} onClick={() => handleSelectedClass(classes)} className="btn">Select Class</button>
                     </div>
                 </div>
             </div>

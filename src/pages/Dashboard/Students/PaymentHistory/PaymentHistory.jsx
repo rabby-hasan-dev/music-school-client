@@ -1,7 +1,7 @@
 
 import UsePayments from "../../../../Hooks/UsePayments";
 const PaymentHistory = () => {
-    const payments=UsePayments();
+    const [payments]=UsePayments();
 
     return (
         <div className="w-full">

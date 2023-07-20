@@ -14,7 +14,7 @@ const SignUp = () => {
 
     const handleConfirmPassWord=(event)=>{
         event.preventDefault();
-        console.log(event.target.value)
+        // console.log(event.target.value)
     }
 
     const onSubmit = data => {
@@ -24,7 +24,7 @@ const SignUp = () => {
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
+                // console.log(loggedUser);
                 updateUserProfiles(data.name, data.photoURL)
                     .then(() => {
 

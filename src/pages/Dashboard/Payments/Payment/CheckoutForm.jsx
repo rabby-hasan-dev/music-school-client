@@ -4,8 +4,9 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure ";
 import useAuth from "../../../../Hooks/UseAuth";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
-const CheckoutForm = ({ selectedClass, price }) => {
+const CheckoutForm = ({ selectClass, price }) => {
     const { user } = useAuth();
     const stripe = useStripe();
     const elements = useElements();
@@ -14,13 +15,13 @@ const CheckoutForm = ({ selectedClass, price }) => {
     const [clientSecret, setClientSecret] = useState('');
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
-    console.log(transactionId);
-
+    // console.log(transactionId);
+    
     useEffect(() => {
 
         axiosSecure.post('/create-payment-intent', { price })
             .then(res => {
-                console.log(res.data.clientSecret);
+                // console.log(res.data.clientSecret);
                 setClientSecret(res.data.clientSecret);
             })
     }, [price, axiosSecure])
@@ -40,7 +41,7 @@ const CheckoutForm = ({ selectedClass, price }) => {
             return
         }
 
-        console.log(card);
+        // console.log(card);
         const { error, paymentMethod } = await stripe.createPaymentMethod({
             type: 'card',
             card,
@@ -52,7 +53,7 @@ const CheckoutForm = ({ selectedClass, price }) => {
         }
         else {
             setCardError('')
-            console.log('paymentMethod', paymentMethod)
+            // console.log('paymentMethod', paymentMethod)
         }
         setProcessing(true);
 
@@ -67,7 +68,8 @@ const CheckoutForm = ({ selectedClass, price }) => {
         })
 
         if (confirmError) {
-            console.log(confirmError);
+            // console.log(confirmError);
+            setCardError(confirmError)
         }
 
         // console.log(paymentIntent);
@@ -78,23 +80,29 @@ const CheckoutForm = ({ selectedClass, price }) => {
             setTransactionId(paymentIntent.id);
 
             const transactionId = paymentIntent.id;
-            console.log(transactionId);
+            // console.log(transactionId);
             // save payment information to the server
             const payment = {
                 email: user?.email,
                 transactionId: transactionId,
                 Date: new Date(),
                 price,
-                quantity: selectedClass.length,
-                selectedClassId: selectedClass.map(item => item._id),
-                className: selectedClass.map(item => item.name),
+                selectClassId: selectClass.map(item => item._id),
+                classId:selectClass.map(item=>item.classId),
+                className: selectClass.map(item => item.name),
                 status: 'service pending'
             }
             axiosSecure.post('/payments', payment)
                 .then(res => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     if (res.data.insertedId) {
-                        // display confirm
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Payment Successfully Paid',
+                            showConfirmButton: false,
+                            timer: 1500
+                          })
                     }
                 })
 

@@ -6,7 +6,8 @@ import UsePayments from "../../../../Hooks/UsePayments";
 
 
 const EnrollClasses = () => {
-    const payments = UsePayments();
+    const [payments] = UsePayments();
+
     const { user } = useAuth();
 
 

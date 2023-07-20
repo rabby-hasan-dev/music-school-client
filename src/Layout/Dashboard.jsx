@@ -1,4 +1,4 @@
-import { FaHome, FaUtensils, FaBook, FaUsers, FaBars, FaBookReader, FaStripe, } from "react-icons/fa";
+import { FaHome, FaUtensils, FaBook, FaUsers, FaBars, FaBookReader, FaStripe, FaAccusoft, } from "react-icons/fa";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../Hooks/useAdmin";
 import useInstructor from "../Hooks/useInstructor";
@@ -65,7 +65,7 @@ const Dashboard = () => {
                         }
                         <div className="divider"></div>
                         <li><Link to='/'><FaHome></FaHome>Home</Link></li>
-                        <li><Link to="/menu"> <FaBars></FaBars>  MENU</Link></li>
+                        <li><Link to="/classes"> <FaAccusoft></FaAccusoft>Class</Link></li>
 
                     </ul>
 
