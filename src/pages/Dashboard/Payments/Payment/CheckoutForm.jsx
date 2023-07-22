@@ -16,6 +16,7 @@ const CheckoutForm = ({ selectClass, price }) => {
     const [clientSecret, setClientSecret] = useState('');
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
+   
 
     
     useEffect(() => {
@@ -88,9 +89,12 @@ const CheckoutForm = ({ selectClass, price }) => {
                 transactionId: transactionId,
                 Date: new Date(),
                 price,
-                selectClassId: selectClass.map(item => item._id),
-                classId:selectClass.map(item=>item.classId),
-                className: selectClass.map(item => item.name),
+                // selectClassId: selectClass.map(item => item._id),
+                selectClassId: selectClass[0]?._id,
+                // classId:selectClass.map(item=>item.classId),
+                classId:selectClass[0]?.classId,
+                // className: selectClass.map(item => item.name),
+                className: selectClass[0]?.name,
                 status: 'service pending'
             }
             axiosSecure.post('/payments', payment)

@@ -14,7 +14,7 @@ const Payment = () => {
     const selectClass = selectedClass.filter(data => data._id == id);
     const priceValue = selectClass[0]?.price;
     const price = parseFloat(priceValue);
-    console.log(selectClass)
+   
    
 
     return (
