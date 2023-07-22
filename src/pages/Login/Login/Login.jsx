@@ -32,7 +32,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
 
-                // console.log(loggedUser)
+               
 
                 Swal.fire({
                     title: 'User Login successful',
@@ -56,10 +56,10 @@ const Login = () => {
     return (
         <div>
 
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col  md:flex-row-reverse">
+            <div className="hero min-h-screen bg-base-200 dark:shadow-slate-50  dark:text-gray-100 dark:bg-slate-900">
+                <div className="hero-content flex-col  md:flex-row-reverse dark:shadow-slate-50  dark:text-gray-100 dark:bg-slate-900">
 
-                    <div className="card md:w-1/2 flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card md:w-1/2 flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 dark:shadow-slate-50  dark:text-gray-100 dark:bg-slate-900">
                         <div className="card-body">
                             <div className="flex flex-col">
                                 <div className="avatar flex-col items-center">
@@ -72,17 +72,17 @@ const Login = () => {
                             <form onSubmit={handleSubmit(onSubmit)} >
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Email</span>
+                                        <span className="label-text dark:text-gray-100 ">Email</span>
                                     </label>
-                                    <input type="email"   {...register("email", { required: true })} name="email" placeholder="email" className="input input-bordered" />
+                                    <input type="email"   {...register("email", { required: true })} name="email" placeholder="email" className="input input- dark:shadow-slate-50  dark:text-gray-100 dark:bg-slate-900" />
                                 </div>
-                                <div className="form-control">
+                                <div className="form-control dark:text-gray-100 ">
                                     <label className="label">
-                                        <span className="label-text">Password</span>
+                                        <span className="label-text dark:text-gray-100 ">Password</span>
                                     </label>
 
-                                    <div className="input-group">
-                                        <input type={passwordType} {...register("password", { required: true, minLength: 6, })} name="password" placeholder="password" className="input input-bordered" />
+                                    <div className="input-group dark:text-gray-100 ">
+                                        <input type={passwordType} {...register("password", { required: true, minLength: 6, })} name="password" placeholder="password" className="input input-bordered dark:shadow-slate-50  dark:text-gray-100 dark:bg-slate-900" />
                                        {
                                         passwordType==="text"?<button onClick={ togglePassword} className="btn "><FaEyeSlash></FaEyeSlash> </button> : <button onClick={togglePassword} className="btn "><FaEye></FaEye></button>
                                        }
@@ -90,18 +90,18 @@ const Login = () => {
 
                                     {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                                     <label className="label">
-                                        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                        <a href="#" className="label-text-alt link link-hover dark:text-gray-100 ">Forgot password?</a>
                                     </label>
 
                                 </div>
 
                                 <div className="form-control mt-6">
 
-                                    <input  className="btn btn-primary" type="submit" value="Login" />
+                                    <input  className="btn btn-primary dark:shadow-slate-50  dark:text-gray-100 dark:bg-slate-900" type="submit" value="Login" />
                                 </div>
 
                             </form>
-                            <div className="form-control mt-6">
+                            <div className="form-control mt-6 dark:shadow-slate-50  ">
 
                                 <SocialLogin></SocialLogin>
                             </div>

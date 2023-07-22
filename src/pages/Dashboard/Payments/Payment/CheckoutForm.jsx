@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 const CheckoutForm = ({ selectClass, price }) => {
+    
     const { user } = useAuth();
     const stripe = useStripe();
     const elements = useElements();
@@ -15,7 +16,7 @@ const CheckoutForm = ({ selectClass, price }) => {
     const [clientSecret, setClientSecret] = useState('');
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
-    // console.log(transactionId);
+
     
     useEffect(() => {
 

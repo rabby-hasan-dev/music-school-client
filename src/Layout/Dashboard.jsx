@@ -24,17 +24,17 @@ const Dashboard = () => {
                 <div className="drawer-content flex flex-col items-center justify-center">
                     {/* Page content here */}
                     <Outlet></Outlet>
-                    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden dark:text-gray-100 dark:bg-slate-900">Open drawer</label>
 
                 </div>
-                <div className="drawer-side ">
+                <div className="drawer-side  ">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-slate-200 uppercase ">
+                    <ul className="menu p-4 w-80 h-full bg-slate-200 uppercase  dark:text-gray-100 dark:bg-slate-900 dark:box-shadow-2xl">
                         {/* Sidebar content here */}
                         {
                             isAdmin ? <>
                                 <h3 className="text-3xl text-center text-red-600">Admin</h3>
-                                <li><NavLink to="/dashboard/home" ><FaHome></FaHome>Admin Home</NavLink></li>
+                                <li><NavLink to="/dashboard/adminHome" ><FaHome></FaHome>Admin Home</NavLink></li>
 
 
                                 <li><NavLink to="/dashboard/manageClasses" ><FaBars></FaBars> Manage classes</NavLink></li>
@@ -46,7 +46,7 @@ const Dashboard = () => {
                                 </li>
                             </> : isInstructor ? <>
                                 <h3 className="text-3xl text-center text-red-600">Instructor</h3>
-                                <li><NavLink to="/dashboard/home" ><FaHome></FaHome>Instructor Home</NavLink></li>
+                                <li><NavLink to="/dashboard/instructorHome" ><FaHome></FaHome>Instructor Home</NavLink></li>
 
                                 <li><NavLink to="/dashboard/addClass" > <FaUtensils></FaUtensils> Add class</NavLink></li>
                                 <li><NavLink to="/dashboard/myClasses" > <FaUtensils></FaUtensils>My Classes</NavLink></li>
@@ -55,7 +55,7 @@ const Dashboard = () => {
                             </> : <>
                                 <h3 className="text-3xl text-center text-red-600">Student</h3>
 
-                                <li><NavLink to="/dashboard/home" ><FaHome></FaHome>Student Home</NavLink></li>
+                                <li><NavLink to="/dashboard/studentHome" ><FaHome></FaHome>Student Home</NavLink></li>
                                 <li><NavLink to="/dashboard/selectedClass" ><FaBook></FaBook> My Selected Class</NavLink></li>
 
                                 <li><NavLink to="/dashboard/enrollClass" ><FaBookReader></FaBookReader> My Enrolled Classes</NavLink></li>

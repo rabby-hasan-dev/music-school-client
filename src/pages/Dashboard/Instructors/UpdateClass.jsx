@@ -17,9 +17,7 @@ const UpdateClass = () => {
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
 
     const onSubmit = data => {
-        console.log(img_hosting_token)
-        console.log(data);
-
+        
 
         const formData = new FormData();
         formData.append('image', data.image[0])
@@ -39,12 +37,11 @@ const UpdateClass = () => {
                         name, image: imgURL, instructor_name: user?.displayName, instructor_email: user?.email, price: parseFloat(price), available_seats: parseFloat(availableSeats), descriptions
                     }
 
-                    console.log(classItem);
-
+                   
 
                     axiosSecure.patch(`/allClasses/${updateClassData?._id}`, classItem)
                         .then(data => {
-                            console.log(data.data)
+                           
 
                             if (data.data.modifiedCount>0) {
                                 reset();

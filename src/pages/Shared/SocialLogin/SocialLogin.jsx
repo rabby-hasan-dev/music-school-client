@@ -48,14 +48,14 @@ const SocialLogin = () => {
     }
     return (
         <div>
-            <div className="divider "></div>
+            <div className="divider  dark:text-slate-100  "></div>
             <div className="w-full text-center">
                 <button onClick={handleGoogleSignIn} className="btn btn-circle btn-outline">
                     <FaGoogle></FaGoogle>
                 </button>
 
             </div>
-            <div className="divider "></div>
+            <div className="divider dark:text-slate-100 "></div>
         </div>
     );
 };

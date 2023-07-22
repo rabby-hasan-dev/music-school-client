@@ -1,6 +1,9 @@
 
 
+
+
 const PopularClasses = () => {
+
     return (
         <div>
             this classes section

@@ -34,7 +34,7 @@ const AddClasses = () => {
                         name, image: imgURL, instructor_name: user?.displayName, instructor_email: user?.email, price: parseFloat(price), available_seats: parseFloat(availableSeats), descriptions, status: 'pending',
                     }
 
-                    console.log(classItem);
+                   
 
 
                     axiosSecure.post('/allClasses', classItem)

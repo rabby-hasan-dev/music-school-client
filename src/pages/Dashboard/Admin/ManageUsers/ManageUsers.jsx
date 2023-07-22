@@ -38,7 +38,7 @@ const ManageUsers = () => {
                         showConfirmButton: false,
                         timer: 1500
                     })
-                    console.log(data);
+                   
                 }
             })
 
@@ -60,7 +60,7 @@ const ManageUsers = () => {
                         showConfirmButton: false,
                         timer: 1500
                     })
-                    console.log(data);
+                   
                 }
             })
 
@@ -89,7 +89,7 @@ const ManageUsers = () => {
                                 'Your users has been deleted.',
                                 'success'
                             )
-                            console.log(data);
+                          
                         }
                     })
 

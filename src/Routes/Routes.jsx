@@ -90,7 +90,7 @@ const router = createBrowserRouter([
                 element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
             },
             {
-                path: "instructor",
+                path: "instructorHome",
                 element: <InstructorHome></InstructorHome>
             },
             {

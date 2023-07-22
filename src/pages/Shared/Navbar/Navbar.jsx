@@ -11,8 +11,7 @@ const Navbar = () => {
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
     const [isDarkMode, setIsDarkMode] = useState(() => false);
-    // console.log(isDarkMode);
-
+  
     const { user, logOut } = useAuth();
 
     if (isDarkMode) {
