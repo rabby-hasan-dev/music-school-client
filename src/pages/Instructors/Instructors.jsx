@@ -1,16 +1,9 @@
-import { useEffect, useState } from "react";
+
 import InsCard from "./InsCard";
+import UseAllInstructors from "../../Hooks/UseAllInstructors";
 
 const Instructors = () => {
-    const [instructors, setInstructors] = useState([])
-
-    useEffect(() => {
-        fetch('http://localhost:5000/allInstructors')
-            .then(res => res.json())
-            .then(data => {
-                setInstructors(data)
-            })
-    }, [])
+    const [instructors]=UseAllInstructors();
     return (
         <div className="grid   md:grid-cols-2 lg:grid-cols-3 gap-4 ">
 

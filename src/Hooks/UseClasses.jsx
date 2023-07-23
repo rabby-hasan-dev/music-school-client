@@ -13,7 +13,7 @@ const UseClasses = () => {
 
 
 
-    return [classes,loading ]
+    return [classes,loading ,refetch]
 
 };
 

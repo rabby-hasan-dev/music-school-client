@@ -5,12 +5,12 @@ import useSelectedClass from "../../Hooks/useSelectedClass";
 import { useState } from "react";
 import useInstructor from "../../Hooks/useInstructor";
 import useAdmin from "../../Hooks/useAdmin";
+import UseAllInstructors from "../../Hooks/UseAllInstructors";
 
 
 const Card = ({ classes }) => {
     const [isAdmin,] = useAdmin();
     const [isInstructor,] = useInstructor()
-
     const { _id, name, image, price, available_seats, instructor_name, instructor_email, } = classes;
     const navigate = useNavigate();
     const location = useLocation();
@@ -18,12 +18,11 @@ const Card = ({ classes }) => {
     const [disabled] = useState(true);
 
 
-
     const { user } = useAuth();
     const handleSelectedClass = (classItem) => {
 
         if (user && user?.email) {
-            const selectedClass = { classId: _id, name, image, price, email: user.email }
+            const selectedClass = { classId: _id, name, image, price, email: user.email, instructor_email }
 
             fetch('http://localhost:5000/selectedClass', {
                 method: 'POST',
@@ -45,7 +44,7 @@ const Card = ({ classes }) => {
                             showConfirmButton: false,
                             timer: 1500
                         })
-                       
+
                     }
 
                 })

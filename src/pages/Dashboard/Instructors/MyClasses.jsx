@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../../Hooks/UseAuth";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyClasses = () => {
     const { user } = useAuth();
@@ -13,6 +14,18 @@ const MyClasses = () => {
             .then(data => setUserClasses(data))
 
     }, [])
+
+    const handleFeedBackModal=(text)=>{   
+        Swal.fire({
+            title: `${text}`,
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+          })
+    }
     return (
         <div className="w-full">
 
@@ -39,7 +52,7 @@ const MyClasses = () => {
                             <th> Price</th>
                             <th> Total Enroll</th>
                             <th>Status</th>
-                            <th >Action</th>
+                            <th>Action</th>
                             <th>Feedback </th>
                         </tr>
                     </thead>
@@ -69,23 +82,19 @@ const MyClasses = () => {
 
                                 <td className="text-center">{classItem.available_seats}</td>
                                 <td>${classItem.price}</td>
-                                <td className="text-center">{userClasses.length}</td>
+                                <td className="text-center">{classItem.total_enroll}</td>
                                 <td>{classItem.status}</td>
                                 <td>
-                                    <Link to={`/dashboard/updateClass/${classItem._id}`}> <button className="btn btn-sm">Update</button></Link>
+                                   <Link to={`/dashboard/updateClass/${classItem?._id}`}>
+                                   <button className="btn">Update</button>
+                                   </Link>
+                                   
                                 </td>
                                 <td>
-
                                    
-
-                                   
-                                  
-                                    <Link to='/dashboard/feedBackInstructor'>
-                                        <button className="btn btn-sm">Feedback</button>
-                                    </Link>
-
+                                    <button className="btn" onClick={()=>handleFeedBackModal(classItem?.feedBack)}>Feedback</button>
                                 </td>
-
+                                
                             </tr>)
                         }
 

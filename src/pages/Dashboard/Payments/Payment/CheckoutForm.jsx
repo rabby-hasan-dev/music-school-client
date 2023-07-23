@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 const CheckoutForm = ({ selectClass, price }) => {
-    
     const { user } = useAuth();
     const stripe = useStripe();
     const elements = useElements();
@@ -95,6 +94,7 @@ const CheckoutForm = ({ selectClass, price }) => {
                 classId:selectClass[0]?.classId,
                 // className: selectClass.map(item => item.name),
                 className: selectClass[0]?.name,
+                instructorEmail:selectClass[0]?.instructor_email ,
                 status: 'service pending'
             }
             axiosSecure.post('/payments', payment)

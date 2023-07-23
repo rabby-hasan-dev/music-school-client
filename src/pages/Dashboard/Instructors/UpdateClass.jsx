@@ -108,7 +108,7 @@ const UpdateClass = () => {
                         <label className="label">
                             <span className="label-text font-semibold">Available seats</span>
                         </label>
-                        <input type="number" defaultValue={updateClassData?.Available_seats} {...register("availableSeats", { required: true })} placeholder="Available seats" className="input input-bordered w-full " />
+                        <input type="number" defaultValue={updateClassData?.available_seats} {...register("availableSeats", { required: true })} placeholder="Available seats" className="input input-bordered w-full " />
                     </div>
 
                 </div>
