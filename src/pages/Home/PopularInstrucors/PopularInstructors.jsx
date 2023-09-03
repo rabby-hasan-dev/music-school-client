@@ -9,7 +9,7 @@ const PopularInstructors = () => {
     return (
         <div className='my-16'>
             <h2 className="text-5xl text-bold text-center my-16 uppercase">Popular Instructor</h2>
-            <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 mx-auto">
+            <div className="grid  lg:grid-cols-2 xl:grid-cols-3 gap-4 justify-items-center  items-end ">
                 {
                     popularInstructors.map(instructor => <div
                         key={instructor?._id}>

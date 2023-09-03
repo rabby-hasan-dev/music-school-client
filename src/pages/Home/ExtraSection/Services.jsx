@@ -12,7 +12,7 @@ import photoGallery9 from '../../../assets/PhotoGallery/galary (10).jpg'
 const Services = () => {
     return (
         <div >
-           <div className='grid lg:grid-cols-2 gap-4  m-20 '>
+           <div className='grid lg:grid-cols-2 gap-4  p-4 lg:m-16 mt-6 '>
            <div>
                 <h2 className="text-6xl">ART OF MUSIC</h2>
                 <p className="text-2xl my-2">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi acc umsan ipsum</p>
