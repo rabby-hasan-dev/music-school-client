@@ -1,4 +1,5 @@
 import Banner from "../Banner/Banner";
+import ContactUs from "../ContactUs/ContactUs";
 import Services from "../ExtraSection/services";
 import PopularClasses from "../PopularClasses/PopularClasses";
 import PopularInstructors from "../PopularInstrucors/PopularInstructors";
@@ -14,6 +15,7 @@ const Home = () => {
             <PopularInstructors></PopularInstructors>
             <Services></Services>
             <Testimonials></Testimonials>
+            <ContactUs></ContactUs>
         </div>
     );
 };

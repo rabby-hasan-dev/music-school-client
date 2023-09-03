@@ -20,8 +20,8 @@ const Testimonials = () => {
     }, [])
 
     return (
-        <section className="my-20">
-           <h2 className="text-6xl text-center font-bold my-6 uppercase">Students FeedBack</h2>
+        <section className="my-20 ">
+           <h2 className="text-5xl text-center font-medium my-6 uppercase">Students FeedBack</h2>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
 
                 {

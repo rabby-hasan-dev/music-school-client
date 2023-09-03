@@ -25,7 +25,7 @@ const Services = () => {
             </div>
            </div>
            <div>
-            <h2 className='text-6xl uppercase text-center my-10'>Photo Gallery</h2>
+            <h2 className='text-5xl uppercase text-center my-20'>Photo Gallery</h2>
             <div className='grid grid-cols-3 gap-4'>
                 <img className='hover:scale-125 transition duration-500 cursor-pointer hover:rounded-lg' src={photoGallery1} alt="photo_Gallery" />
                 <img className='hover:scale-125 transition duration-500 cursor-pointer hover:rounded-lg' src={photoGallery2} alt="photo_Gallery" />

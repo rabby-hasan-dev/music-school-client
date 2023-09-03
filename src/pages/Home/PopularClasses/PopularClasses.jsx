@@ -14,15 +14,15 @@ const PopularClasses = () => {
 
 
     return (
-        <div >
+        <div  className="my-12 ">
 
-            <h2 className="text-6xl text-bold text-center mb-8 uppercase">Popular Class</h2>
-            <div className="grid lg:grid-cols-3">
+            <h2 className="text-5xl text-bold text-center mb-16 uppercase ">Popular Class</h2>
+            <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 lg:mx-auto ">
                 {
                     popularClasses.map((popularClass) => <div
                         key={popularClass?._id}
                     >
-                        <div className="card w-96 bg-base-100 shadow-xl dark:shadow-slate-50  dark:text-gray-100 dark:bg-slate-900">
+                        <div className="card lg:w-96 bg-base-100 shadow-xl dark:shadow-slate-50  dark:text-gray-100 dark:bg-slate-900">
                             <figure><img src={popularClass?.image} alt="Shoes" /></figure>
                             <div className="card-body ">
                                 <h2 className="card-title">{popularClass?.name}</h2>
