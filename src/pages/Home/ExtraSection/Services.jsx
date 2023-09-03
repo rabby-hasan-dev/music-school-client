@@ -27,15 +27,15 @@ const Services = () => {
            <div>
             <h2 className='text-6xl uppercase text-center my-10'>Photo Gallery</h2>
             <div className='grid grid-cols-3 gap-4'>
-                <img src={photoGallery1} alt="photo_Gallery" />
-                <img src={photoGallery2} alt="photo_Gallery" />
-                <img src={photoGallery3} alt="photo_Gallery" />
-                <img src={photoGallery4} alt="photo_Gallery" />
-                <img src={photoGallery5} alt="photo_Gallery" />
-                <img src={photoGallery6} alt="photo_Gallery" />
-                <img src={photoGallery7} alt="photo_Gallery" />
-                <img src={photoGallery8} alt="photo_Gallery" />
-                <img src={photoGallery9} alt="photo_Gallery" />
+                <img className='hover:scale-125 transition duration-500 cursor-pointer hover:rounded-lg' src={photoGallery1} alt="photo_Gallery" />
+                <img className='hover:scale-125 transition duration-500 cursor-pointer hover:rounded-lg' src={photoGallery2} alt="photo_Gallery" />
+                <img className='hover:scale-125 transition duration-500 cursor-pointer hover:rounded-lg' src={photoGallery3} alt="photo_Gallery" />
+                <img className='hover:scale-125 transition duration-500 cursor-pointer hover:rounded-lg' src={photoGallery4} alt="photo_Gallery" />
+                <img className='hover:scale-125 transition duration-500 cursor-pointer hover:rounded-lg' src={photoGallery5} alt="photo_Gallery" />
+                <img className='hover:scale-125 transition duration-500 cursor-pointer hover:rounded-lg' src={photoGallery6} alt="photo_Gallery" />
+                <img className='hover:scale-125 transition duration-500 cursor-pointer hover:rounded-lg' src={photoGallery7} alt="photo_Gallery" />
+                <img className='hover:scale-125 transition duration-500 cursor-pointer hover:rounded-lg' src={photoGallery8} alt="photo_Gallery" />
+                <img className='hover:scale-125 transition duration-500 cursor-pointer hover:rounded-lg' src={photoGallery9} alt="photo_Gallery" />
             </div>
            </div>
         </div>

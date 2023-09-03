@@ -83,7 +83,7 @@ const router = createBrowserRouter([
             {
                 path: "feedBack/:id",
                 element: <FeedBack></FeedBack>,
-                loader: ({ params }) => fetch(`http://localhost:5000/allClasses/${params.id}`)
+                loader: ({ params }) => fetch(`https://music-shool-server.vercel.app/allClasses/${params.id}`)
             },
             {
                 path: "allUsers",
@@ -104,7 +104,7 @@ const router = createBrowserRouter([
             {
                 path: "updateClass/:id",
                 element: <UpdateClass></UpdateClass>,
-                loader: ({ params }) => fetch(`http://localhost:5000/allClasses/${params.id}`)
+                loader: ({ params }) => fetch(`https://music-shool-server.vercel.app/allClasses/${params.id}`)
             },
 
             {

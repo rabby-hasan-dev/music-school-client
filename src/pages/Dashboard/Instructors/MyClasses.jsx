@@ -9,7 +9,7 @@ const MyClasses = () => {
     // console.log(userClasses);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allClasses?email=${user?.email}`)
+        fetch(`https://music-shool-server.vercel.app/allClasses?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setUserClasses(data))
 

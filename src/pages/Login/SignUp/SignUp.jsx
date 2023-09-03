@@ -23,7 +23,7 @@ const SignUp = () => {
                     .then(() => {
 
                         const saveUsers = { name: data.name, email: data.email, picture: data.photoURL }
-                        fetch('http://localhost:5000/allUsers', {
+                        fetch('https://music-shool-server.vercel.app/allUsers', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'

@@ -5,7 +5,7 @@ import axios from 'axios';
 import useAuth from './UseAuth';
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000/',
+    baseURL: 'https://music-shool-server.vercel.app/',
 });
 
 const useAxiosSecure = () => {

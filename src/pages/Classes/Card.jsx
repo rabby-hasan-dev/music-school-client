@@ -24,7 +24,7 @@ const Card = ({ classes }) => {
         if (user && user?.email) {
             const selectedClass = { classId: _id, name, image, price, email: user.email, instructor_email }
 
-            fetch('http://localhost:5000/selectedClass', {
+            fetch('https://music-shool-server.vercel.app/selectedClass', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
