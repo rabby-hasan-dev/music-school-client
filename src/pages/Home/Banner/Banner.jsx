@@ -31,12 +31,60 @@ const Banner = () => {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide><img src={banner2} alt="banner" /></SwiperSlide>
-        <SwiperSlide><img src={banner1} alt="banner" /></SwiperSlide>
-        <SwiperSlide><img src={banner3} alt="banner" /></SwiperSlide>
-        <SwiperSlide><img src={banner4} alt="banner" /></SwiperSlide>
-        <SwiperSlide><img src={banner5} alt="banner" /></SwiperSlide>
-        <SwiperSlide><img src={banner6} alt="banner" /></SwiperSlide>
+        <SwiperSlide>
+          <img src={banner2} alt="banner" />
+          <div className=" text-white absolute top-0 md:top-1/4  lg:top-1/4 xl:top-1/4 lg:bottom-1/4 left-0 md:left-10 lg:left-1/4 xl:left-1/4   p-4 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+            <div className="xl:my-20">
+              <h1 className="text-4xl uppercase font-bold my-3">Well Come to our Music School</h1>
+              <p className="text-lg">Our institute for music lover people. Who can know music instrument in depth .<br /> Everyone Welcome for learning music instrument class..</p>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={banner1} alt="banner" />
+          <div className=" text-white absolute top-0 md:top-1/4  lg:top-1/4 xl:top-1/4 lg:bottom-1/4 left-0 md:left-10 lg:left-1/4 xl:left-1/4   p-4 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+            <div className="xl:my-20">
+              <h1 className="text-4xl uppercase font-bold my-3">Well Come to our Music School</h1>
+              <p className="text-lg">Our institute for music lover people. Who can know music instrument in depth .<br /> Everyone Welcome for learning music instrument class..</p>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={banner3} alt="banner" />
+          <div className=" text-white absolute top-0 md:top-1/4  lg:top-1/4 xl:top-1/4 lg:bottom-1/4 left-0 md:left-10 lg:left-1/4 xl:left-1/4   p-4 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+            <div className="xl:my-20">
+              <h1 className="text-4xl uppercase font-bold my-3">Well Come to our Music School</h1>
+              <p className="text-lg">Our institute for music lover people. Who can know music instrument in depth .<br /> Everyone Welcome for learning music instrument class..</p>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={banner4} alt="banner" />
+          <div className=" text-white absolute top-0 md:top-1/4  lg:top-1/4 xl:top-1/4 lg:bottom-1/4 left-0 md:left-10 lg:left-1/4 xl:left-1/4   p-4 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+            <div className="xl:my-20">
+              <h1 className="text-4xl uppercase font-bold my-3">Well Come to our Music School</h1>
+              <p className="text-lg">Our institute for music lover people. Who can know music instrument in depth .<br /> Everyone Welcome for learning music instrument class..</p>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={banner5} alt="banner" />
+          <div className=" text-white absolute top-0 md:top-1/4  lg:top-1/4 xl:top-1/4 lg:bottom-1/4 left-0 md:left-10 lg:left-1/4 xl:left-1/4   p-4 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+            <div className="xl:my-20">
+              <h1 className="text-4xl uppercase font-bold my-3">Well Come to our Music School</h1>
+              <p className="text-lg">Our institute for music lover people. Who can know music instrument in depth .<br /> Everyone Welcome for learning music instrument class..</p>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={banner6} alt="banner" />
+          <div className=" text-white absolute top-0 md:top-1/4  lg:top-1/4 xl:top-1/4 lg:bottom-1/4 left-0 md:left-10 lg:left-1/4 xl:left-1/4   p-4 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+            <div className="xl:my-20">
+              <h1 className="text-4xl uppercase font-bold my-3">Well Come to our Music School</h1>
+              <p className="text-lg">Our institute for music lover people. Who can know music instrument in depth .<br /> Everyone Welcome for learning music instrument class..</p>
+            </div>
+          </div>
+        </SwiperSlide>
       </Swiper>
     </>
   );

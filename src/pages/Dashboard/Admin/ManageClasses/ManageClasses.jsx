@@ -47,7 +47,7 @@ const ManageClasses = () => {
 
 
     return (
-        <div className="w-full">
+        <div className="w-full mx-10">
 
 
             <div className="uppercase  font-semi-bold h-[60] flex justify-evenly items-center">
