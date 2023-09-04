@@ -104,7 +104,7 @@ const ManageUsers = () => {
 
 
     return (
-        <div className='w-full mx-10'>
+        <div className='w-full '>
 
             <h3 className="text-3xl font-semibold">Total Users :{users.length}</h3>
             <div>

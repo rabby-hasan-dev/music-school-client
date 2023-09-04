@@ -1,4 +1,4 @@
-// import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 
@@ -14,7 +14,7 @@ const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('/public/reviews.json')
+        fetch('https://music-shool-server.vercel.app/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
