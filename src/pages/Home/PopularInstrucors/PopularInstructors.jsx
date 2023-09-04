@@ -1,10 +1,10 @@
-import React from 'react';
+
 import UseAllInstructors from '../../../Hooks/UseAllInstructors';
-import InsCard from '../../Instructors/InsCard';
+
 
 const PopularInstructors = () => {
     const [instructors] = UseAllInstructors();
-    const popularInstructors = instructors.filter(tS => tS.total_enroll_students > 0);
+    const popularInstructors = instructors.filter(tS => tS.total_enroll_students >= 1);
 
     return (
         <div className='my-16'>

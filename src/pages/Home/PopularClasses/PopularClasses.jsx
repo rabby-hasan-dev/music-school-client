@@ -4,10 +4,11 @@ import UseClasses from "../../../Hooks/UseClasses";
 
 
 
+
 const PopularClasses = () => {
 
     const [classes] = UseClasses();
-    const popularClasses = classes.filter(pClasses => pClasses?.total_enroll > 0);
+    const popularClasses = classes.filter(pClasses => pClasses?.total_enroll >=1);
 
 
 

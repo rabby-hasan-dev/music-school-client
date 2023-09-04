@@ -1,11 +1,13 @@
 
+
+
 import UseClasses from "../../../Hooks/UseClasses";
 import Card from "../Card";
 
 
 
 const Classes = () => {
-    const [classes, loading, refetch] = UseClasses()
+    const [classes, loading, refetch] =UseClasses();
  
   
     return (

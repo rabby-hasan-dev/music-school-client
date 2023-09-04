@@ -1,15 +1,16 @@
 
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure ";
 import Swal from "sweetalert2";
-import UseClasses from "../../../../Hooks/UseClasses";
 import { Link } from "react-router-dom";
+import UseAllClasses from "../../../../Hooks/UseAllClasses";
+
 
 
 
 
 const ManageClasses = () => {
     const [axiosSecure] = useAxiosSecure();
-    const [classes, , refetch] = UseClasses();
+    const [classes, , refetch] = UseAllClasses();
 
 
     const handleApproved = (id) => {
