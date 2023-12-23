@@ -24,7 +24,7 @@ const PopularClasses = () => {
                         key={popularClass?._id}
                     >
                         <div className="card lg:w-96 bg-base-100 shadow-xl dark:shadow-slate-50  dark:text-gray-100 dark:bg-slate-900">
-                            <figure><img src={popularClass?.image} alt="Picture" /></figure>
+                            <figure><img className=" w-[356px] h-[250px]" src={popularClass?.image} alt="Picture" /></figure>
                             <div className="card-body ">
                                 <h2 className="card-title">{popularClass?.name}</h2>
                                 <h2 className="text-2xl">Instructor: {popularClass?.instructor_name}</h2>

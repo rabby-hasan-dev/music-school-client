@@ -71,7 +71,7 @@ const Card = ({ classes }) => {
     return (
         <div>
             <div className="card lg:w-96 bg-base-100 shadow-xl dark:shadow-slate-50  dark:text-gray-100 dark:bg-slate-900">
-                <figure><img src={image} alt="Shoes" /></figure>
+                <figure ><img className="  w-[356px] h-[250px] " src={image} alt="Picture" /></figure>
                 <div className="card-body ">
                     <h2 className="card-title">{name}</h2>
                     <p> Price:{price}</p>
